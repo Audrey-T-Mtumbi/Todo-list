@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Sign Up</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+    }
+
+    .container {
+      display: flex;
+      height: 100vh;
+    }
+
+    .left-half {
+      flex: 1;
+      background: url('/images/xul.jpg') no-repeat center center;
+      background-size: cover;
+    }
+
+    .right-half {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background:#ffffff;
+    }
+
+    form {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.2);
+      width: 400px;
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      box-sizing: border-box;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .login-link {
+      text-align: center;
+      display: block;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <div class="left-half">
+      <!-- Image is shown through background CSS -->
+    </div>
+
+    <div class="right-half">
+      <form id="registerForm">
+        <h2>Create Account</h2>
+        <input type="text" id="username" placeholder="Username" required>
+        <input type="email" id="email" placeholder="Email" required>
+        <input type="password" id="password" placeholder="Password" required>
+        <button type="submit">Sign Up</button>
+        <a href="login.html" class="login-link">Already have an account? Login</a>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const user = { username, email, password };
+
+      localStorage.setItem(username, JSON.stringify(user));
+      alert("Registration successful! You can now log in.");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>
+
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #0056b3;
+    }
+
+    .login-link {
+      text-align: center;
+      display: block;
+      margin-top: 15px;
+    }
+  </style>
+</head>
+<body>
+
+  <form id="registerForm">
+    <h2>Create Account</h2>
+    <input type="text" id="username" placeholder="Username" required>
+    <input type="email" id="email" placeholder="Email" required>
+    <input type="password" id="password" placeholder="Password" required>
+    <button type="submit">Sign Up</button>
+    <a href="login.html" class="login-link">Already have an account? Login</a>
+  </form>
+
+  <script>
+    document.getElementById("registerForm").addEventListener("submit", function (event) {
+      event.preventDefault();
+
+      const username = document.getElementById("username").value;
+      const email = document.getElementById("email").value;
+      const password = document.getElementById("password").value;
+
+      const user = {
+        username,
+        email,
+        password
+      };
+
+      // Store user data in localStorage
+      localStorage.setItem(username, JSON.stringify(user));
+      alert("Registration successful! You can now log in.");
+      window.location.href = "login.html";
+    });
+  </script>
+
+</body>
+</html>
